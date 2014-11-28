@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "common1.h"
-#include "k.h"
+#include <common1.h>
+#include <k.h>
 
 static
 PyObject* kx_py_open_connection(PyObject* self, PyObject* args) {

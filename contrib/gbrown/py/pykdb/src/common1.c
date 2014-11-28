@@ -1,7 +1,7 @@
-#include "common1.h"
-#include "dtm.h"
+#include <common1.h>
+#include <dtm.h>
 #include <datetime.h>
-#include "k.h"
+#include <k.h>
 
 #define scalar(x) (x->t < 0)
 
