@@ -14,23 +14,22 @@ if platform.system() == 'Windows':
 	
 if platform.system() == 'Linux':
 	if platform.architecture()[0] == '64bit':
-		c_dot_o = path.abspath('../../../../cookbook_code/r/l64_qserver/c.o')
+		c_dot_o = path.abspath('../../../../kx/kdb+/l64/c.o')
 	else:
-		c_dot_o = path.abspath('../../../../cookbook_code/r/l32_qserver/c.o')
+		c_dot_o = path.abspath('../../../../kx/kdb+/l32/c.o')
 		
-	libs = ['']
-	extra_compile_args = ['']
+	libs = ['m']
+	extra_compile_args = ['-O2']
 
 k_dot_h_loc = path.abspath('../../../../kx/kdb+/c/c' )
 
 kdbmodule =  Extension('pykdb.kdb', 
 			['src/qserver1.c', 'src/common1.c', 'src/dtm.c'], 
 			define_macros = [('KXVER', '3'), ('HAVE_ROUND', None)],
-			include_dirs = [k_dot_h_loc],
+			include_dirs = ['src', k_dot_h_loc],
 			extra_compile_args = extra_compile_args,
 			libraries = libs,
-			extra_objects = [c_dot_o],
-			extra_link_args = ['']
+			extra_objects = [c_dot_o]
 			)
 
 setup (name = 'pykdb', 
@@ -41,3 +40,4 @@ setup (name = 'pykdb',
 	author_email = 'gb9801@gmail.com',
 	ext_modules = [kdbmodule]
 	)
+
