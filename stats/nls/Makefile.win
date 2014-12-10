@@ -61,7 +61,7 @@ $(OBJDIR)/%.o : %.c
 clean:
 	$(RM) $(OBJECTS) libq.def
 
-test: shared
+test: nls.$(EXT)
 	$(Q) $(QSCRIPT)
 
 # Here any c.o will do since I just need a list of symbols

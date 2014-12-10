@@ -1,6 +1,8 @@
 pykdb is a python module allowing kdb+ objects to be imported into Python similar to qserver for R
 
 The current implementation works for {w32, w64, l32, l64} and for Python{v2.7.?, v3.4.?}
+Building for windows has been tested with MSVC 2013 toolkit for Win32/64 and for Linux with gcc 4.7
+and later
 
 Notable differences:
 	1) datetime/timestamp objects are not assumed to be UTC and hence are not adjusted to the 
