@@ -1,0 +1,8 @@
+A kdb+ interface to the minpack Fortran code for solving non linear equations
+with an application to non linear least squares.
+
+The original Fortran code can be found at the Netlib location
+http://www.netlib.org/minpack/index.html
+
+Compilation for Windows(Makefile.win) and Linux (Makefile) has been tested
+with gcc only. See the example in test.q
